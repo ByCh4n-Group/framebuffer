@@ -1,3 +1,4 @@
+name: Check if comptaible to commit for the pr
 on:
   pull_request:
     paths:
