@@ -1,0 +1,15 @@
+name: Test For Discord Push
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Access The Code
+      uses: actions/checkout@v2
+
+    - name: Execute the test
+      run: |
+        bash test.sh push
