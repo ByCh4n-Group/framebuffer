@@ -5,7 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      discord: ${{ secrets.DISCORD }}
     steps:
     - name: Access The Code
       uses: actions/checkout@v2
