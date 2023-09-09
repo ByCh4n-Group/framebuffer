@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export fjson=($(git diff --name-only "${eventb}" "${events}" | grep '^_data/.*\.json$'))
+export fjson="$(find _data -type f -name *.json | wc -l)"
 
 if [[ "${#fjson[@]}" = "1" ]] ; then
 	:
