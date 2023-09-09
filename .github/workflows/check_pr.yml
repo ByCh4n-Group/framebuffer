@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      eventb: ${{ github.event.before }}
       events: ${{ github.sha }}
+      eventb: ${{ github.event.before }}
 
     steps:
     - name: Accessing The Code
