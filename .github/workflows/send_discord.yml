@@ -10,6 +10,10 @@ jobs:
     - name: Access The Code
       uses: actions/checkout@v2
 
+    - name: Update Submodule
+      run: |
+        git submodule update --init --recursive
+
     - name: Execute the test
       run: |
         bash test.sh push
