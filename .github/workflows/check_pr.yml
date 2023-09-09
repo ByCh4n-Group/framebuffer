@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    paths:
+      - "_data/*.json"
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      eventb: ${{ github.event.before }}
+      events: ${{ github.sha }}
+
+    steps:
+    - name: Accessing The Code
+      uses: actions/checkout@v2
+
+    - name: Checkup if available the pr
+      run: |
+        bash test.sh check_pr
