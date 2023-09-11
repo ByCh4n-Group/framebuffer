@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# bash "discord.sh/discord.sh" --webhook-url "${discord}" --text "Test"
-
 if [[ "$(find fb0 -type f -name *.json | wc -l)" = "1" ]] && [[ ! -f "fb0/mymessage.json" ]] ; then
     export fn="$(find fb0 -type f -name *.json -exec basename \{} \;)"
     case "${fn}" in

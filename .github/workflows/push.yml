@@ -1,11 +1,9 @@
 name: Move and Push the Content
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
 
 jobs:
   build:
