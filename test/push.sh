@@ -17,7 +17,10 @@ if [[ "$(find fb0 -type f -name *.json | wc -l)" = "1" ]] && [[ ! -f "fb0/mymess
 				if [[ "${img}" = "null" || -z "${img}" ]] ;  then
 					export img="${default_img}"
 				fi
-				mv "fb0/${fn}" "_data"
+                if [[ ! -d "_data" ]] ; then
+                    mkdir "_data"
+                fi
+				mv "fb0/${fn}" "_data/${fn}"
                 if [[ -f "fb0/"* ]] ; then
                     rm "fb0/"*
                 fi
