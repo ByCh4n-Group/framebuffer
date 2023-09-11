@@ -1,12 +1,17 @@
-name: Test For Discord Push
+name: Move and Push the Content
 
-on: [push]
+on:
+  pull_request:
+    types:
+      - closed
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     env:
       discord: ${{ secrets.DISCORD }}
+
     steps:
     - name: Access The Code
       uses: actions/checkout@v2
@@ -18,3 +23,9 @@ jobs:
     - name: Execute the test
       run: |
         bash test.sh push
+
+    -name: Submit the message and clean the base
+      run: |
+        git add -A
+        git commit -m "Auto update"
+        git push
