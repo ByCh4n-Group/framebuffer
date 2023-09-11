@@ -24,7 +24,7 @@ jobs:
       run: |
         bash test.sh push
 
-    -name: Submit the message and clean the base
+    - name: Submit the ctx
       run: |
         git add -A
         git commit -m "Auto update"
