@@ -17,13 +17,13 @@ jobs:
       run: |
         git submodule update --init --recursive
 
-    - name: Execute the test
+    - name: Push
       env:
         discord: ${{ secrets.DISCORD }}
       run: |
         bash test.sh push
 
-    - name: Submit the 
+    - name: Submit the ctx
       run: |
         git add -A
         git commit -m "Auto update"
