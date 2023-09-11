@@ -9,10 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    steps:
     env:
       discord: ${{ secrets.DISCORD }}
-
-    steps:
     - name: Access The Code
       uses: actions/checkout@v2
 
