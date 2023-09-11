@@ -23,7 +23,7 @@ jobs:
       run: |
         bash test.sh push
 
-    -name: Submit the 
+    - name: Submit the 
       run: |
         git add -A
         git commit -m "Auto update"
