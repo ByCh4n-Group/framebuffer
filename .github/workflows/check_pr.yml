@@ -2,7 +2,7 @@ name: Check if comptaible to commit for the pr
 on:
   pull_request:
     paths:
-      - "_data/*.json"
+      - "fb0/*.json"
     types:
       - opened
       - synchronize
@@ -10,10 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      events: ${{ github.sha }}
-      eventb: ${{ github.event.before }}
 
     steps:
     - name: Accessing The Code
