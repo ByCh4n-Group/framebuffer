@@ -2,6 +2,8 @@ name: Move and Push the Content
 
 on:
   pull_request:
+    branches:
+      - main
     types:
       - closed
 
