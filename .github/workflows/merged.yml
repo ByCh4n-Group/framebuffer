@@ -13,15 +13,13 @@ jobs:
     - name: Access The Code
       uses: actions/checkout@v2
     
-    - name: Set the secret key
-      env:
-        discord: ${{ secrets.DISCORD }}
-
     - name: Update Submodule
       run: |
         git submodule update --init --recursive
 
     - name: Execute the test
+      env:
+        discord: ${{ secrets.DISCORD }}
       run: |
         bash test.sh push
 
