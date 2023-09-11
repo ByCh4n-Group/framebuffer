@@ -8,10 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
     env:
       discord: ${{ secrets.DISCORD }}
+
+    steps:
     - name: Access The Code
       uses: actions/checkout@v2
 
@@ -23,7 +23,7 @@ jobs:
       run: |
         bash test.sh push
 
-    - name: Submit the ctx
+    -name: Submit the 
       run: |
         git add -A
         git commit -m "Auto update"
