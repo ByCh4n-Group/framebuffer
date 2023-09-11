@@ -8,10 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      discord: ${{ secrets.DISCORD }}
 
     steps:
+    - name: Set up env
+      env:
+        discord: ${{ secrets.DISCORD }}
+
     - name: Access The Code
       uses: actions/checkout@v2
 
