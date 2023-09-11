@@ -18,9 +18,8 @@ jobs:
         git submodule update --init --recursive
 
     - name: Push
-      env:
-        discord: ${{ secrets.DISCORD }}
       run: |
+        export discord="${{ secrets.DISCORD }}"
         bash test.sh push
 
     - name: Submit the ctx
