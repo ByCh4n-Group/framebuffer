@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up env
-      env:
-        discord: ${{ secrets.DISCORD }}
-
     - name: Access The Code
       uses: actions/checkout@v2
+    
+    - name: Set the secret key
+      env:
+        discord: ${{ secrets.DISCORD }}
 
     - name: Update Submodule
       run: |
